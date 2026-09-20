@@ -28,11 +28,11 @@ def place_order(e):
 
 # Generating SKU
 def gen_sku(e):
-        categ = document.getElementById("cat").value
-        prod = document.getElementById("prod").value
+        ctg = document.getElementById("cat").value
+        prd = document.getElementById("prod").value
         stock = document.getElementById("stock").value
-        product_code = prod.strip().lower()[0:3]
-        sku = categ + product_code + stock
+        prd_code = prod.strip().lower()[0:3]
+        sku = ctg + prd_code + stock
         display(sku, target="sku-result")
 
 # sku and reciept pages that are switching
