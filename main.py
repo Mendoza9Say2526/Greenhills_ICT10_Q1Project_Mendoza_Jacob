@@ -36,11 +36,11 @@ def gen_sku(e):
         display(sku, target="sku-result")
 
 # sku and reciept pages that are switching
-def show_sku(e):
+def present_sku(e):
     document.getElementById("receipt-page").hidden = True
     document.getElementById("sku-page").hidden = False
 
-def show_receipt(e):
+def present_receipt(e):
     document.getElementById("sku-page").hidden = True
     document.getElementById("receipt-page").hidden = False
 
