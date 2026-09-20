@@ -32,7 +32,7 @@ def gen_sku(e):
         prod = document.getElementById("prod").value
         stock = document.getElementById("stock").value
         product_code = prod.strip().lower()[0:3]
-        sku = categ + "-" + product_code + "-" + stock
+        sku = categ + product_code + stock
         display(sku, target="sku-result")
 
 # sku and reciept pages that are switching
