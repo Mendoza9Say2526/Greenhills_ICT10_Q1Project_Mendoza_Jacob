@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Project</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="">SKEW</a></li>
+            </ul>
+            <form class="d-flex">
+                <button class="btn btn-primary" type="button" id="sku-button" py-click = "show_sku">SKU Generator</button>
+                <button class="btn btn-danger" type="button" id="receipt-button" py-click = "show_receipt">Reciept Generator</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<!--reciept-->
+<div id = "receipt-page" class="container mt-4 p-3">
+    <div class = "row">
+        <div class = "col-md-8 mx-auto">
+        <h1>OBMC Entrep Fair</h1>
+            <div class="card">
+                    <div class="card-body">
+                        <h3>OBMC Entrep Fair</h3>
+                        <p>Group 3 - Italian Menu</p>
+                    </div>
+                        <legend>Menu:</legend>
+
+                    <div>
+                        <input type="checkbox" id="item1" value="200">
+                        <label for="item1">Bruschetta</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="item2" value="450">
+                        <label for="item2">Pizza</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="item3" value="250">
+                        <label for="item3">Tiramisu</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="item4" value="80">
+                        <label for="item4">Red Wine</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="item5" value="300">
+                        <label for="item5">Spaghetti Bolognese</label>
+                    </div>
+                <button type="button" py-click="place_order">Place Order</button>
+                <div id="show" class="mt-3 p-3 border"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--sku-->
+    <div id = "sku-page" class = "container mt-4" hidden>
+        <div class = "row">
+            <div class="col-md-8 mx-auto">
+                    <h1>SKU Generator</h1>
+                    <div class = "card">
+                        <h3>SKU Gen</h3>
+                    <div class="card-body mt-auto">
+                        <label for="categories">Catg:</label>
+                        <select id="cat" class="form-select mb-3">
+                            <option value="food">Food</option>
+                            <option value="drink">Drink</option>
+                        </select>
+
+                        <label for="product">Product</label>
+                        <input type="text" id="prod" class="form-control mb-3" placeholder="Type a product.">
+
+                        <label for="stock">Stock Quantity</label>
+                        <input type="number" id="stock" class="form-control mb-3">
+
+                        <button class="gen" type="button" py-click="gen_sku">Generate SKU</button>
+                        <div class="result">
+                            <p id="sku-result"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <py-script src="main.py"></py-script>
+</body>
+</html>
